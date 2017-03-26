@@ -1,6 +1,7 @@
 package getarticle.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sun.istack.internal.Nullable;
 
 import java.io.*;
 import java.net.URL;
@@ -40,10 +41,6 @@ public class HttpUtils {
             connection.connect();
             // 获取所有响应头字段
             Map<String, List<String>> map = connection.getHeaderFields();
-            // 遍历所有的响应头字段
-            for (String key : map.keySet()) {
-                System.out.println(key + "--->" + map.get(key));
-            }
             // 定义 BufferedReader输入流来读取URL的响应
             in = new BufferedReader(new InputStreamReader(
                     connection.getInputStream()));
@@ -68,7 +65,7 @@ public class HttpUtils {
         return result;
     }
 
-    public static String sendPost(String url, Map<String, String> params, Serializable postBody) {
+    public static String sendPost(String url, @Nullable Map<String, String> params, Serializable postBody) {
         PrintWriter out = null;
         BufferedReader in = null;
 
