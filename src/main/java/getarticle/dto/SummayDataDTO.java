@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by wangjian on 17-3-27.
  */
 public class SummayDataDTO {
-    private Date date;
+    private Date ref_date;
     private Integer user_source;
     private String msgid;
     private String title;
@@ -21,12 +21,12 @@ public class SummayDataDTO {
     private Integer add_to_fav_user;
     private Integer add_to_fav_count;
 
-    public Date getDate() {
-        return date;
+    public Date getRef_date() {
+        return ref_date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setRef_date(Date ref_date) {
+        this.ref_date = ref_date;
     }
 
     public Integer getUser_source() {
